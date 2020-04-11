@@ -1,6 +1,6 @@
 <template>
     <div class="login_container">
-        loigin
+        loigingit
     </div>
 </template>
 
