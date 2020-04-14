@@ -22,7 +22,7 @@
           :collapse-transition="true"
           router
           :default-active="activePath"
-          background-color="#CDCDCD"
+          background-color="#F2F6FC"
           text-color="#666666"
           active-text-color="#FF9655"
         >
@@ -37,13 +37,13 @@
             <!-- 导航开启路由模式：将index值作为导航路由 -->
             <el-menu-item
               :index="'/' + subItem.path"
-              v-for="subItem in item,children"
+              v-for="subItem in item.children"
               :key="subItem.id"
               @click="saveNavState('/' + subItem.path)"
             >
               <!-- lv2 template -->
               <template slot="title">
-                <i class="el-icon-moon"></i>
+                <i class="el-icon-toilet-paper"></i>
                 <span>{{ subItem.authName }}</span>
               </template>
             </el-menu-item>
@@ -72,7 +72,7 @@ export default {
   },
   created() {
     this.getMenuList(),
-      (this.activePath = window.sessionStorage.getItem("activePath"));
+    this.activePath = window.sessionStorage.getItem("activePath");
   },
   methods: {
     logout() {
@@ -82,7 +82,7 @@ export default {
     },
     // get menu
     async getMenuList() {
-      const { date: res } = await this.$http.get("menus");
+      const { data: res } = await this.$http.get("menus");
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg);
       this.menuList = res.data;
     },
