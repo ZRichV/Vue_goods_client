@@ -3,7 +3,7 @@
     <!-- head -->
     <el-header>
       <div>
-        <span>午夜心碎俱乐部</span>
+        <span>MIDNIGHT HEARTBREAK CLUB</span>
       </div>
       <el-button round @click="logout">Lover Boy</el-button>
     </el-header>
@@ -11,7 +11,8 @@
     <el-container>
       <!-- leftSideMenus -->
       <el-aside :width="isCollapse ? '70px' : '250px'">
-        <div class="toggle-button" @click="doCollapse">Toosie Slide</div>
+        <div class="toggle-button" 
+        @click="doCollapse">Toosie Slide</div>
         <!-- :unique-opened="true"-> 是否只保持一个子菜单的展开 -->
         <!-- :collapse-transition="false" -> 关闭动画 -->
         <!-- router -> 导航开启路由模式 -->
@@ -27,7 +28,9 @@
           active-text-color="#FF9655"
         >
           <!-- lv1 menu-->
-          <el-submenu :index="item.id+''" v-for="item in menuList" :key="item.id">
+          <el-submenu :index="item.id+''" 
+          v-for="item in menuList" 
+          :key="item.id">
             <!-- lv1 template -->
             <template slot="title">
               <i class="el-icon-no-smoking"></i>
@@ -91,7 +94,7 @@ export default {
       this.isCollapse = !this.isCollapse;
     },
     // save activePath
-    saveNaveState(activePath) {
+    saveNavState(activePath) {
       window.sessionStorage.setItem("activePath", activePath);
     }
   }
@@ -135,7 +138,7 @@ export default {
   margin-right: 10px;
 }
 .toggle-button {
-  background-color: #EBEEF5;
+  background-color: #FF9655;
   font-size: 17px;
   line-height: 24px;
   color: #000000;

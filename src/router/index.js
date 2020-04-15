@@ -10,13 +10,19 @@ const Login = () => import(/* webpackChunkName: "Login_Register_Home" */ '../com
 const Register = () => import(/* webpackChunkName: "Login_Register_Home" */ '../components/Register.vue')
 const Home = () => import(/* webpackChunkName: "Login_Register_Home" */ '../components/Home.vue')
 
+const Users = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/user/User.vue')
+
+
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/', redirect: '/login' },
   { path: '/login', component: Login },
   { path: '/register', component: Register },
-  { path: '/home', component: Home }
+  { path: '/home', component: Home,
+    children: [
+      { path: '/users', component: Users }
+    ] }
 ]
 
 const router = new VueRouter({
