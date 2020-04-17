@@ -59,7 +59,7 @@
                 icon="el-icon-setting"
                 size="mini"
                 circle
-                @click="setRole(scope.row)"
+                @click="setRoleDrawerShow(scope.row)"
               ></el-button>
             </el-tooltip>
           </template>
@@ -150,7 +150,7 @@
     >
       <div>
         <p>USERNAME: {{ userInfo.username }}</p>
-        <p>USERNAME: {{ userInfo.role-name }}</p>
+        <p>USERROLE: {{ userInfo.role_name }}</p>
         <p>
           SET ROLE:
           <!-- filterable:是否可搜索, allow-create:是否允许用户创建新条目，需配合 filterable 使用 -->
@@ -355,7 +355,7 @@ export default {
       });
     },
     // Show Set Role Drawer
-    async setRole (role) {
+    async setRoleDrawerShow (role) {
         this.userInfo = role;
         const { data : res } = await this.$http.get('roles');
         if(res.meta.status !== 200) {

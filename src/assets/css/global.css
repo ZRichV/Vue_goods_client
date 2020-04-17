@@ -27,8 +27,13 @@ html, body, #app {
     margin-top: 40px;
     margin-right: 10px;
 }
+
 .el-drawer .drawer-button {
     margin-left: 110px;
     margin-top: 40px;
 }
-    
+
+.el-drawer p {
+    margin-top: 40px;
+    text-align: center;
+}
