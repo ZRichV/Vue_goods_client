@@ -264,7 +264,7 @@ export default {
         return this.$message.error("Getting User List Failed");
       }
       this.userlist = res.data.users;
-      this.totle = res.data.totle;
+      this.totle = res.data.total;
     },
     // Listen Pagesize Changing Event
     handleSizeChange(newSize) {
@@ -272,7 +272,7 @@ export default {
       this.getUserList();
     },
     // Listen PageNum Changing Event
-    handleCurrentChange(newSzie) {
+    handleCurrentChange(newSize) {
       this.queryInfo.pagenum = newSize;
       this.getUserList();
     },
@@ -381,7 +381,7 @@ export default {
     setRoleDrawerClosed () {
         this.selectRoleId = '';
         this.userInfo = {};
-        this.setRoleDialogVisible = false;
+        this.setRoleDrawer = false;
     }
   }
 };

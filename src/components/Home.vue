@@ -23,7 +23,7 @@
           :collapse-transition="true"
           router
           :default-active="activePath"
-          background-color="#F2F6FC"
+          background-color="#EBEEF5"
           text-color="#666666"
           active-text-color="#FF9655"
         >
@@ -106,13 +106,13 @@ export default {
   height: 100%;
 }
 .el-header {
-  background-color: #F2F6FC;
+  background-color: #EBEEF5;
   display: flex;
   justify-content: space-between;
   padding-left: 90px;
   align-items: center;
   color: #000000;
-  font-size: 30px;
+  font-size: 25px;
   > div {
     display: flex;
     align-items: center;
@@ -125,14 +125,14 @@ export default {
   }
 }
 .el-aside {
-  background-color: #F2F6FC;
+  background-color: #EBEEF5;
 
   .el-menu {
     border: 5px;
   }
 }
 .el-main {
-  background-color: #EBEEF5;
+  background-color: #F2F6FC;
 }
 .iconfont{
   margin-right: 10px;
