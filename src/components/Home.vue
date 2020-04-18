@@ -15,7 +15,7 @@
         @click="doCollapse">Toosie Slide</div>
         <!-- :unique-opened="true"-> 是否只保持一个子菜单的展开 -->
         <!-- :collapse-transition="false" -> 关闭动画 -->
-        <!-- router -> 导航开启路由模式 -->
+        <!-- router -> 导航开启路由模式 将index值作为导航路由-->
         <!-- :default-active="activePath" -> 当前激活菜单的 index -->
         <el-menu
           unique-opened

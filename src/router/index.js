@@ -11,7 +11,8 @@ const Register = () => import(/* webpackChunkName: "Login_Register_Home" */ '../
 const Home = () => import(/* webpackChunkName: "Login_Register_Home" */ '../components/Home.vue')
 
 const Users = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/user/User.vue')
-
+const Rights = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/authority/Rights.vue')
+const Roles = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/authority/Roles.vue')
 
 Vue.use(VueRouter)
 
@@ -21,7 +22,9 @@ const routes = [
   { path: '/register', component: Register },
   { path: '/home', component: Home,
     children: [
-      { path: '/users', component: Users }
+      { path: '/users', component: Users },
+      { path: '/rights', component: Rights },
+      { path: '/roles', component: Roles }
     ] }
 ]
 
