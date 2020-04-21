@@ -11,11 +11,11 @@
         <el-table-column label="Role Name" prop="authName"></el-table-column>
         <el-table-column label="Path" prop="path"></el-table-column>
         <el-table-column label="Role Level" prop="level">
-            <template slot-scope="scope">
-                <el-tag v-if="scope.row.level === '0'">lv1</el-tag>
-                <el-tag type="success" v-else-if="scope.row.level === '1'">lv2</el-tag>
-                <el-tag type="danger" v-else>lv3</el-tag>
-            </template>
+          <template slot-scope="scope">
+            <el-tag v-if="scope.row.level === '0'">lv1</el-tag>
+            <el-tag type="success" v-else-if="scope.row.level === '1'">lv2</el-tag>
+            <el-tag type="danger" v-else>lv3</el-tag>
+          </template>
         </el-table-column>
       </el-table>
     </el-card>
@@ -27,20 +27,20 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
-        rightsList: []
+      rightsList: []
     };
   },
   created() {
-      this.getRightsList();
+    this.getRightsList();
   },
   methods: {
-      async getRightsList(){
-          const{ data: res } = await this.$http.get('rights/list');
-          if(res.meta.status !== 200){
-              return this.$message.error('Getting Rights List Failed');
-          }
-          this.rightsList = res.data
+    async getRightsList() {
+      const { data: res } = await this.$http.get("rights/list");
+      if (res.meta.status !== 200) {
+        return this.$message.error("Getting Rights List Failed");
       }
+      this.rightsList = res.data;
+    }
   }
 });
 </script>

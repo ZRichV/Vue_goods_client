@@ -10,9 +10,8 @@
     <!-- body -->
     <el-container>
       <!-- leftSideMenus -->
-      <el-aside :width="isCollapse ? '70px' : '250px'">
-        <div class="toggle-button" 
-        @click="doCollapse">Toosie Slide</div>
+      <el-aside :width="isCollapse ? '70px' : '230px'">
+        <div class="toggle-button" @click="doCollapse">Toosie Slide</div>
         <!-- :unique-opened="true"-> 是否只保持一个子菜单的展开 -->
         <!-- :collapse-transition="false" -> 关闭动画 -->
         <!-- router -> 导航开启路由模式 将index值作为导航路由-->
@@ -28,9 +27,7 @@
           active-text-color="#FF9655"
         >
           <!-- lv1 menu-->
-          <el-submenu :index="item.id+''" 
-          v-for="item in menuList" 
-          :key="item.id">
+          <el-submenu :index="item.id+''" v-for="item in menuList" :key="item.id">
             <!-- lv1 template -->
             <template slot="title">
               <i class="el-icon-no-smoking"></i>
@@ -70,12 +67,12 @@ export default {
       // default collapse
       isCollapse: false,
       // path of active
-      activePath: ''
+      activePath: ""
     };
   },
   created() {
     this.getMenuList(),
-    this.activePath = window.sessionStorage.getItem("activePath");
+      (this.activePath = window.sessionStorage.getItem("activePath"));
   },
   methods: {
     logout() {
@@ -106,7 +103,7 @@ export default {
   height: 100%;
 }
 .el-header {
-  background-color: #EBEEF5;
+  background-color: #ebeef5;
   display: flex;
   justify-content: space-between;
   padding-left: 90px;
@@ -125,20 +122,20 @@ export default {
   }
 }
 .el-aside {
-  background-color: #EBEEF5;
+  background-color: #ebeef5;
 
   .el-menu {
     border: 5px;
   }
 }
 .el-main {
-  background-color: #F2F6FC;
+  background-color: #f2f6fc;
 }
-.iconfont{
+.iconfont {
   margin-right: 10px;
 }
 .toggle-button {
-  background-color: #FF9655;
+  background-color: #ff9655;
   font-size: 17px;
   line-height: 24px;
   color: #000000;

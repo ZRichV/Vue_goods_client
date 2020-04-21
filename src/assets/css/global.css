@@ -1,4 +1,6 @@
-html, body, #app {
+html,
+body,
+#app {
     height: 100%;
     padding: 0;
     margin: 0;
@@ -22,7 +24,7 @@ html, body, #app {
     margin-top: 20px;
 }
 
-.el-drawer .el-form{
+.el-drawer .el-form {
     margin-left: 10px;
     margin-top: 40px;
     margin-right: 10px;
@@ -38,12 +40,16 @@ html, body, #app {
     text-align: center;
 }
 
+
 /* 解决级联选择框的问题 */
+
 div .el-scrollbar__wrap {
     height: 300px !important
 }
 
+
 /* 步骤条 */
+
 .el-steps {
     margin: 15px 0;
 }
@@ -51,6 +57,7 @@ div .el-scrollbar__wrap {
 .el-step__title {
     font-size: 13px;
 }
-.ql-editor{
+
+.ql-editor {
     min-height: 300px;
 }

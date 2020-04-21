@@ -14,6 +14,11 @@ const Users = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../comp
 const Rights = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/authority/Rights.vue')
 const Roles = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/authority/Roles.vue')
 
+const GoodsList = () => import (/* webpackChunkName: "GoodsList_Add" */ '../components/goods/List.vue')
+const GoodsAdd = () => import(/* webpackChunkName: "GoodsList_Add" */ '../components/goods/Add.vue')
+
+const Params = () => import(/* webpackChunkName: "Cate_Params" */ '../components/goods/Params.vue')
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -24,7 +29,10 @@ const routes = [
     children: [
       { path: '/users', component: Users },
       { path: '/rights', component: Rights },
-      { path: '/roles', component: Roles }
+      { path: '/roles', component: Roles },
+      { path: '/goods', component: GoodsList },
+      { path: '/goods/add', component: GoodsList },
+      { path: '/params',component:Params }
     ] }
 ]
 
