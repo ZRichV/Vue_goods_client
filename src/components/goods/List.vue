@@ -24,10 +24,10 @@
       <el-table :data="goodsList" border stripe>
         <el-table-column type="index"></el-table-column>
         <el-table-column label="Name" prop="goods_name"></el-table-column>
-        <el-table-column label="Price(Yuan)" prop="good_price" width="100px"></el-table-column>
-        <el-table-column label="Weight" prop="goods_weight" width="75px"></el-table-column>
-        <el-table-column label="Number" prop="good_number" width="75px"></el-table-column>
-        <el-table-column label="Create Time" prop="add_time" width="130px">
+        <el-table-column label="Price(Yuan)" prop="goods_price" width="90px"></el-table-column>
+        <el-table-column label="Weight" prop="goods_weight" width="70px"></el-table-column>
+        <el-table-column label="Number" prop="goods_number" width="70px"></el-table-column>
+        <el-table-column label="Create Time" prop="add_time" width="140px">
           <template slot-scope="scope">{{ scope.row.add_time | dataFormat }}</template>
         </el-table-column>
         <el-table-column label="Operation" width="130px">

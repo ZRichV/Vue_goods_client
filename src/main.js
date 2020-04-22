@@ -22,41 +22,41 @@ import axios from 'axios'
 axios.defaults.baseURL = 'http://127.0.0.1:3000/api/shop/'
 
 axios.interceptors.request.use(config => {
-  NProgress.start()
-  // console.log(config)
-  // 为请求头对象，添加token验证的Authorization字段
-  config.headers.Authorization = window.sessionStorage.getItem('token')
-  // 在最后必须 return config
-  return config
-})
-// response 拦截器中,  隐藏进度条NProgress.done()
+        NProgress.start()
+            // console.log(config)
+            // 为请求头对象，添加token验证的Authorization字段
+        config.headers.Authorization = window.sessionStorage.getItem('token')
+            // 在最后必须 return config
+        return config
+    })
+    // response 拦截器中,  隐藏进度条NProgress.done()
 axios.interceptors.response.use(config => {
-  NProgress.done()
-  return config
-})
-// 挂在到Vue实例，后面可通过this调用
+        NProgress.done()
+        return config
+    })
+    // 挂在到Vue实例，后面可通过this调用
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
-// 组件全局注册 表格树
+    // 组件全局注册 表格树
 Vue.component('tree-table', TreeTable)
-// 全局注册富文本编辑器
+    // 全局注册富文本编辑器
 Vue.use(VueQuillEditor)
 
 // 月份在JS里面是从0开始的
 // padStart补0
-Vue.filter('dataFormat', function(originVal){
-  const dt = new Date(originVal);
-  const y = dt.getFullYear();
-  const m = (dt.getMonth() + 1 + '').padStart(2, '0');
-  const d = (dt.getDate + '').padStart(2, '0');
-  const hh = (dt.getHours() + '').padStart(2, '0');
-  const mm = (dt.getMinutes() + '').padStart(2, '0');
-  const ss = (dt.getSeconds() + '').padStart(2, '0');
-  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+Vue.filter('dataFormat', function(originVal) {
+    const dt = new Date(originVal);
+    const y = dt.getFullYear();
+    const m = (dt.getMonth() + 1 + '').padStart(2, '0');
+    const d = (dt.getDate() + '').padStart(2, '0');
+    const hh = (dt.getHours() + '').padStart(2, '0');
+    const mm = (dt.getMinutes() + '').padStart(2, '0');
+    const ss = (dt.getSeconds() + '').padStart(2, '0');
+    return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
 });
 
 new Vue({
-  router,
-  render: h => h(App)
+    router,
+    render: h => h(App)
 }).$mount('#app')
