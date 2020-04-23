@@ -44,7 +44,7 @@ const routes = [
             { path: '/rights', component: Rights },
             { path: '/roles', component: Roles },
             { path: '/goods', component: GoodsList },
-            { path: '/goods/add', component: GoodsList },
+            { path: '/goods/add', component: GoodsAdd },
             { path: '/params', component: Params },
             { path: '/categories', component: Cate }
         ]

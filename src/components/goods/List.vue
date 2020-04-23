@@ -110,7 +110,7 @@ export default Vue.extend({
         return this.$message.error("Deleting Goods Failed");
       }
       this.$message.success("Deleting Goods Successed");
-      this.getGoodList();
+      this.getGoodsList();
     },
     addPage() {
       this.$router.push("/goods/add");
