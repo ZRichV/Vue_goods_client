@@ -12,6 +12,8 @@ const Register = () =>
     import ( /* webpackChunkName: "Login_Register_Home" */ '../components/Register.vue')
 const Home = () =>
     import ( /* webpackChunkName: "Login_Register_Home" */ '../components/Home.vue')
+const Hello = () =>
+    import ( /* webpackChunkName: "Login_Register_Home" */ '../components/Hello.vue')
 
 const Users = () =>
     import ( /* webpackChunkName: "Users_Rights_Roles" */ '../components/user/User.vue')
@@ -44,7 +46,9 @@ const routes = [
     {
         path: '/home',
         component: Home,
+        redirect: '/Hello',
         children: [
+            { path: '/home', component: Hello },
             { path: '/users', component: Users },
             { path: '/rights', component: Rights },
             { path: '/roles', component: Roles },
